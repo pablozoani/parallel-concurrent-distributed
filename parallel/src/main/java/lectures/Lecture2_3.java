@@ -50,7 +50,7 @@ public class Lecture2_3 {
         return output;
     }
 
-    private static boolean isPrime(int i) {
+    public static boolean isPrime(int i) {
         if (i <= 1) return false;
         for (int j = 2; j <= Math.sqrt(i); j++) if (i % j == 0) return false;
         return true;

@@ -67,10 +67,7 @@ public class WithCompletableFutures {
                 loopBody
             ));
         final int startIndexInclusive = chunkNumber * numberOfElements / numberOfChunks;
-        final int endIndexExclusive = Math.min(
-            nextChunkNumber * numberOfElements / numberOfChunks,
-            numberOfElements
-        );
+        final int endIndexExclusive = nextChunkNumber * numberOfElements / numberOfChunks;
         for (int i = startIndexInclusive; i < endIndexExclusive; i++) loopBody.accept(i);
         if (future != null) future.join();
     }
